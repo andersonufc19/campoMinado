@@ -4,10 +4,10 @@ import {View, StyleSheet} from 'react-native'
 export default props =>{
     return(
         <View style={style.container}>
-            <View style={style.flagpole}/>
-            <View style={style.flag}/>
-            <View style={style.base1}/>
-            <View style={style.base2}/>
+            <View style={[style.flagpole , props.big ? style.flaggedpoleBig : null]}/>
+            <View style={[style.flag, props.big ? style.flagBig: null]}/>
+            <View style={[style.base1, props.big ? style.base1Big: null]}/>
+            <View style={[style.base2, props.big ? style.base2Big: null]}/>
         </View>
     )
 }
@@ -52,4 +52,30 @@ const style = StyleSheet.create({
         marginLeft:5,
         marginTop:12,
     },
+    flaggedpoleBig:{
+        height:28,
+        width:4,
+        marginLeft:16,
+    },
+
+    flagBig:{
+        height:10,
+        width:14,
+        marginLeft:3,
+    },  
+
+    base1Big:{
+        height:4,
+        width:12,
+        marginTop:20,
+        marginLeft:12,
+    },
+
+    base2Big:{
+        height:4,
+        width:20,
+        marginLeft:8,
+        marginTop:24,
+    }
+
 })
